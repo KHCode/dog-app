@@ -9,7 +9,8 @@ export class AppHome {
   render() {
     return (
       <div class="app-home">
-        <app-image> I dont know </app-image>
+        <app-image></app-image>
+        <app-select-menu></app-select-menu>
       </div>
     );
   }

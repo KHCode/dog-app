@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, Fragment } from '@stencil/core';
 
 @Component({
   tag: 'app-select-menu',
@@ -13,15 +13,20 @@ export class AppSelectMenu {
     "retriever",
     "bloodhound",
     "australian shephard"
-  ]
-  select = document.querySelector("select");
-  fragment = document.createDocumentFragment();
-  
+  ];
+
+  breedsList = Object.keys(this.dogBreeds).map(key => ({name: key}));
+
   render() {
     return (
       <div>
         <label htmlFor="dog-select">Select a Dog Breed</label>
         <select>
+          {this.dogBreeds.map((breed) => (
+            <option value={breed}>
+              {breed}
+            </option>
+          ))}
         </select>
       </div>
 
