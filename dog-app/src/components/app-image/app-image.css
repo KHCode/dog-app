@@ -1,5 +1,6 @@
 .app-image{
-  width: 50%;
-  height: 120px;
+  width: 20rem;
+  height: 20rem;
   background: red;
+  border-radius: 3rem;
 }

@@ -16,6 +16,8 @@ export namespace Components {
     }
     interface AppRoot {
     }
+    interface AppSelectMenu {
+    }
 }
 declare global {
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
@@ -42,11 +44,18 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLAppSelectMenuElement extends Components.AppSelectMenu, HTMLStencilElement {
+    }
+    var HTMLAppSelectMenuElement: {
+        prototype: HTMLAppSelectMenuElement;
+        new (): HTMLAppSelectMenuElement;
+    };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
         "app-image": HTMLAppImageElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
+        "app-select-menu": HTMLAppSelectMenuElement;
     }
 }
 declare namespace LocalJSX {
@@ -59,11 +68,14 @@ declare namespace LocalJSX {
     }
     interface AppRoot {
     }
+    interface AppSelectMenu {
+    }
     interface IntrinsicElements {
         "app-home": AppHome;
         "app-image": AppImage;
         "app-profile": AppProfile;
         "app-root": AppRoot;
+        "app-select-menu": AppSelectMenu;
     }
 }
 export { LocalJSX as JSX };
@@ -74,6 +86,7 @@ declare module "@stencil/core" {
             "app-image": LocalJSX.AppImage & JSXBase.HTMLAttributes<HTMLAppImageElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "app-select-menu": LocalJSX.AppSelectMenu & JSXBase.HTMLAttributes<HTMLAppSelectMenuElement>;
         }
     }
 }
