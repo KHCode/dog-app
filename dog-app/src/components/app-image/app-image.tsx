@@ -1,17 +1,15 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'dog-image',
-  styleUrl: 'dog-image.css',
+  tag: 'app-image',
+  styleUrl: 'app-image.css',
   shadow: true,
 })
-export class DogImage {
+export class AppImage {
 
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <div class="app-image"></div>
     );
   }
 

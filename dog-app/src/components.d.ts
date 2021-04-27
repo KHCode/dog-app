@@ -9,12 +9,12 @@ import { MatchResults } from "@stencil/router";
 export namespace Components {
     interface AppHome {
     }
+    interface AppImage {
+    }
     interface AppProfile {
         "match": MatchResults;
     }
     interface AppRoot {
-    }
-    interface DogImage {
     }
 }
 declare global {
@@ -23,6 +23,12 @@ declare global {
     var HTMLAppHomeElement: {
         prototype: HTMLAppHomeElement;
         new (): HTMLAppHomeElement;
+    };
+    interface HTMLAppImageElement extends Components.AppImage, HTMLStencilElement {
+    }
+    var HTMLAppImageElement: {
+        prototype: HTMLAppImageElement;
+        new (): HTMLAppImageElement;
     };
     interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
     }
@@ -36,34 +42,28 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
-    interface HTMLDogImageElement extends Components.DogImage, HTMLStencilElement {
-    }
-    var HTMLDogImageElement: {
-        prototype: HTMLDogImageElement;
-        new (): HTMLDogImageElement;
-    };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
+        "app-image": HTMLAppImageElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
-        "dog-image": HTMLDogImageElement;
     }
 }
 declare namespace LocalJSX {
     interface AppHome {
+    }
+    interface AppImage {
     }
     interface AppProfile {
         "match"?: MatchResults;
     }
     interface AppRoot {
     }
-    interface DogImage {
-    }
     interface IntrinsicElements {
         "app-home": AppHome;
+        "app-image": AppImage;
         "app-profile": AppProfile;
         "app-root": AppRoot;
-        "dog-image": DogImage;
     }
 }
 export { LocalJSX as JSX };
@@ -71,9 +71,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
+            "app-image": LocalJSX.AppImage & JSXBase.HTMLAttributes<HTMLAppImageElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
-            "dog-image": LocalJSX.DogImage & JSXBase.HTMLAttributes<HTMLDogImageElement>;
         }
     }
 }
