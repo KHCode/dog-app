@@ -7,9 +7,18 @@
 
   Any global CSS variables should also be applied here.
 */
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
 
-body {
-  margin: 0px;
-  padding: 0px;
+body,
+h1,
+h2,
+h3,
+p {
+  background-color: var(--color-background);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
