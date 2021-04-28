@@ -18,9 +18,11 @@ export class AppSelectMenu {
 
   // breedsList = Object.keys(this.dogBreeds).map(key => ({name: key}));
   dogData = new Map();
-  numBreeds;
+  dogList = [];
+  numBreeds: number;
   dataResponse;
   subBreeds = [];
+
   componentWillLoad() {
     return axios.get('https://dog.ceo/api/breeds/list/all')
       .then(response => {
@@ -38,20 +40,32 @@ export class AppSelectMenu {
           }
         }
         console.log(this.dogData);
-        // this.dogData = Object.keys(response.data.message);
+        // this.dogList = [...this.dogData.keys()];
+        
+        this.dogList = Object.keys(response.data.message);
+        console.log(this.dogList);
+      });
+  }
+
+  getPicture = (event) => {
+    console.log(event.target.value);
+    axios.get(`https://dog.ceo/api/breed/${event.target.value}/images/random`)
+      .then(response => {
+        console.log(response.data.message);
       });
   }
 
   render() {
+    
     return (
       <div>
         <label htmlFor="dog-select">Select a Dog Breed</label>
-        <select>
-          {this.dogData.forEach((breed) => (
-            <option value={breed}>
-              {breed}
+        <select id="dog-select" onChange={(e) => this.getPicture(e)}>
+          {this.dogList.map(key =>
+            <option value={key}>
+              {key}
             </option>
-          ))}
+          )}
         </select>
       </div>
 
