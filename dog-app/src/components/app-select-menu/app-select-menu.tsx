@@ -17,12 +17,28 @@ export class AppSelectMenu {
   ];
 
   // breedsList = Object.keys(this.dogBreeds).map(key => ({name: key}));
-  dogData;
+  dogData = new Map();
+  numBreeds;
+  dataResponse;
+  subBreeds = [];
   componentWillLoad() {
     return axios.get('https://dog.ceo/api/breeds/list/all')
       .then(response => {
-        console.log(Object.keys(response.data.message));
-        this.dogData = Object.keys(response.data.message);
+        this.dataResponse = response.data.message;
+        this.numBreeds = this.dataResponse.length;
+        for (const [key, value] of Object.entries(this.dataResponse)) {
+          if(!Array.isArray(value) || !value.length) {
+            this.dogData.set(key, []);
+          } else {
+            this.subBreeds = [];
+            value.forEach(name => {
+              this.subBreeds.push(name);
+            })
+            this.dogData.set(key, this.subBreeds);
+          }
+        }
+        console.log(this.dogData);
+        // this.dogData = Object.keys(response.data.message);
       });
   }
 
@@ -31,7 +47,7 @@ export class AppSelectMenu {
       <div>
         <label htmlFor="dog-select">Select a Dog Breed</label>
         <select>
-          {this.dogData.map((breed) => (
+          {this.dogData.forEach((breed) => (
             <option value={breed}>
               {breed}
             </option>
