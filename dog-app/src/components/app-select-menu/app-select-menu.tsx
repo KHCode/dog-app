@@ -15,7 +15,7 @@ export class AppSelectMenu {
     "australian shephard"
   ];
 
-  breedsList = Object.keys(this.dogBreeds).map(key => ({name: key}));
+  // breedsList = Object.keys(this.dogBreeds).map(key => ({name: key}));
 
   render() {
     return (
