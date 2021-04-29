@@ -1,3 +1,16 @@
-:host {
-  display: block;
+.dog-select-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#dog-select{
+  /* height: 2rem; */
+  padding: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+label{
+  font-size: 2rem;
 }

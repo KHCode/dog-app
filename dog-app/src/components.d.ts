@@ -7,9 +7,12 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MatchResults } from "@stencil/router";
 export namespace Components {
+    interface AppAgainButton {
+    }
     interface AppHome {
     }
     interface AppImage {
+        "dogImage": string;
     }
     interface AppProfile {
         "match": MatchResults;
@@ -17,9 +20,16 @@ export namespace Components {
     interface AppRoot {
     }
     interface AppSelectMenu {
+        "handleChange": (e: Event) => void;
     }
 }
 declare global {
+    interface HTMLAppAgainButtonElement extends Components.AppAgainButton, HTMLStencilElement {
+    }
+    var HTMLAppAgainButtonElement: {
+        prototype: HTMLAppAgainButtonElement;
+        new (): HTMLAppAgainButtonElement;
+    };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
     var HTMLAppHomeElement: {
@@ -51,6 +61,7 @@ declare global {
         new (): HTMLAppSelectMenuElement;
     };
     interface HTMLElementTagNameMap {
+        "app-again-button": HTMLAppAgainButtonElement;
         "app-home": HTMLAppHomeElement;
         "app-image": HTMLAppImageElement;
         "app-profile": HTMLAppProfileElement;
@@ -59,9 +70,12 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AppAgainButton {
+    }
     interface AppHome {
     }
     interface AppImage {
+        "dogImage"?: string;
     }
     interface AppProfile {
         "match"?: MatchResults;
@@ -69,8 +83,10 @@ declare namespace LocalJSX {
     interface AppRoot {
     }
     interface AppSelectMenu {
+        "handleChange"?: (e: Event) => void;
     }
     interface IntrinsicElements {
+        "app-again-button": AppAgainButton;
         "app-home": AppHome;
         "app-image": AppImage;
         "app-profile": AppProfile;
@@ -82,6 +98,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-again-button": LocalJSX.AppAgainButton & JSXBase.HTMLAttributes<HTMLAppAgainButtonElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-image": LocalJSX.AppImage & JSXBase.HTMLAttributes<HTMLAppImageElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;

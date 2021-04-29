@@ -1,6 +1,14 @@
 .app-image{
-  width: 20rem;
-  height: 20rem;
-  background: red;
-  border-radius: 3rem;
+  width: 15rem;
+  height: 15rem;
+  margin: 3rem;
+}
+
+.image{
+  height: 100%;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  object-fit: cover;
 }

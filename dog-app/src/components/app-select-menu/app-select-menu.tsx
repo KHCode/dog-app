@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 import axios from 'axios';
 
 @Component({
@@ -7,6 +7,9 @@ import axios from 'axios';
   shadow: true,
 })
 export class AppSelectMenu {
+  @Prop() handleChange: (e: Event) => void;
+
+
   dogBreeds = [
     "labrador",
     "pitbull",
@@ -47,20 +50,12 @@ export class AppSelectMenu {
       });
   }
 
-  getPicture = (event) => {
-    console.log(event.target.value);
-    axios.get(`https://dog.ceo/api/breed/${event.target.value}/images/random`)
-      .then(response => {
-        console.log(response.data.message);
-      });
-  }
-
   render() {
     
     return (
-      <div>
+      <div class="dog-select-container">
         <label htmlFor="dog-select">Select a Dog Breed</label>
-        <select id="dog-select" onChange={(e) => this.getPicture(e)}>
+        <select id="dog-select" onChange={this.handleChange}>
           {this.dogList.map(key =>
             <option value={key}>
               {key}
