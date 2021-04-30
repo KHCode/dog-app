@@ -17,3 +17,8 @@ h1 {
 main{
   height: 88.1vh;
 }
+
+.dog-icon{
+  height: 2rem;
+  width: 2rem;
+}

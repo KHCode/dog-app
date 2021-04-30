@@ -10,7 +10,8 @@ export class AppRoot {
     return (
       <div>
         <header>
-          <h1>Choose a Dog Breed</h1>
+          <img class="dog-icon" src="./assets/icon/dog-paw-pic-icon.svg" alt="dog paw in a camera frame"/>
+          <h1>DogPix</h1>    
         </header>
 
         <main>
