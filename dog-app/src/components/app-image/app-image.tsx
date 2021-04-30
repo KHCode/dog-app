@@ -1,4 +1,4 @@
-import { Component, Prop, State, h } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'app-image',
@@ -7,13 +7,14 @@ import { Component, Prop, State, h } from '@stencil/core';
 })
 export class AppImage {
   @Prop() dogImage: string;
+  @Prop() altText: string;
   componentWillRender() {
     console.log(this.dogImage);
   }
   render() {
     return (
       <div class="app-image">
-        <img class="image" src={this.dogImage} alt="dog"></img>
+        <img class="image" src={this.dogImage} alt={this.altText}></img>
       </div>
     );
   }

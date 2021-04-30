@@ -14,7 +14,10 @@ export namespace Components {
     interface AppHome {
     }
     interface AppImage {
+        "altText": string;
         "dogImage": string;
+    }
+    interface AppOnLoad {
     }
     interface AppProfile {
         "match": MatchResults;
@@ -44,6 +47,12 @@ declare global {
         prototype: HTMLAppImageElement;
         new (): HTMLAppImageElement;
     };
+    interface HTMLAppOnLoadElement extends Components.AppOnLoad, HTMLStencilElement {
+    }
+    var HTMLAppOnLoadElement: {
+        prototype: HTMLAppOnLoadElement;
+        new (): HTMLAppOnLoadElement;
+    };
     interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
     }
     var HTMLAppProfileElement: {
@@ -66,6 +75,7 @@ declare global {
         "app-again-button": HTMLAppAgainButtonElement;
         "app-home": HTMLAppHomeElement;
         "app-image": HTMLAppImageElement;
+        "app-on-load": HTMLAppOnLoadElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
         "app-select-menu": HTMLAppSelectMenuElement;
@@ -79,7 +89,10 @@ declare namespace LocalJSX {
     interface AppHome {
     }
     interface AppImage {
+        "altText"?: string;
         "dogImage"?: string;
+    }
+    interface AppOnLoad {
     }
     interface AppProfile {
         "match"?: MatchResults;
@@ -93,6 +106,7 @@ declare namespace LocalJSX {
         "app-again-button": AppAgainButton;
         "app-home": AppHome;
         "app-image": AppImage;
+        "app-on-load": AppOnLoad;
         "app-profile": AppProfile;
         "app-root": AppRoot;
         "app-select-menu": AppSelectMenu;
@@ -105,6 +119,7 @@ declare module "@stencil/core" {
             "app-again-button": LocalJSX.AppAgainButton & JSXBase.HTMLAttributes<HTMLAppAgainButtonElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-image": LocalJSX.AppImage & JSXBase.HTMLAttributes<HTMLAppImageElement>;
+            "app-on-load": LocalJSX.AppOnLoad & JSXBase.HTMLAttributes<HTMLAppOnLoadElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "app-select-menu": LocalJSX.AppSelectMenu & JSXBase.HTMLAttributes<HTMLAppSelectMenuElement>;

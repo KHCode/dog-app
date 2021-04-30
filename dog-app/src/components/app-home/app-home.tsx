@@ -24,7 +24,7 @@ export class AppHome {
   render() {
     return (
       <div class="app-home">
-        <app-image dogImage={this.imgUrl}></app-image>
+        {this.imgUrl ? <app-image dogImage={this.imgUrl} altText={this.dogSelected}></app-image> : <app-on-load></app-on-load>}
         <app-select-menu handleChange={this.getPicture}></app-select-menu>
         <app-again-button dogSelected={this.dogSelected} handleClick={this.getPicture}></app-again-button>
       </div>

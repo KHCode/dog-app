@@ -1,0 +1,27 @@
+.app-on-load{
+  width: 15rem;
+  height: 15rem;
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrow-down{
+  width: 10rem;
+  animation: 3s ease-in-out infinite bob;
+}
+
+@keyframes bob{
+  0%{
+    transform: translate(0);
+  }
+
+  50%{
+    transform: translateY(2rem);
+  }
+
+  100%{
+    transform: translate(0)
+  }
+}
