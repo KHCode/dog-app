@@ -26,7 +26,7 @@ export class AppHome {
       <div class="app-home">
         <app-image dogImage={this.imgUrl}></app-image>
         <app-select-menu handleChange={this.getPicture}></app-select-menu>
-        <app-again-button dogSelected={this.dogSelected}></app-again-button>
+        <app-again-button dogSelected={this.dogSelected} handleClick={this.getPicture}></app-again-button>
       </div>
     );
   }

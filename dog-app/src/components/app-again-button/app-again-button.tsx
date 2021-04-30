@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'app-again-button',
@@ -6,12 +6,12 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class AppAgainButton {
+  @Prop() handleClick: (e: Event) => void;
+  @Prop() dogSelected: string;
 
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <button class="again-button" onClick={this.handleClick} value={this.dogSelected}>Same Breed Again</button>
     );
   }
 

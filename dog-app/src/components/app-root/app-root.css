@@ -1,6 +1,5 @@
 header {
-  background: #5851ff;
-  color: white;
+  background: #f3f4ed;
   height: 56px;
   display: flex;
   align-items: center;
@@ -11,6 +10,10 @@ header {
 h1 {
   font-size: 1.4rem;
   font-weight: 500;
-  color: #fff;
+  color: #23049d;
   padding: 0 12px;
+}
+
+main{
+  height: 88.1vh;
 }
