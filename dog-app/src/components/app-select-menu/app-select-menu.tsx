@@ -9,17 +9,6 @@ import axios from 'axios';
 export class AppSelectMenu {
   @Prop() handleChange: (e: Event) => void;
 
-
-  dogBreeds = [
-    "labrador",
-    "pitbull",
-    "cocker spaniel",
-    "retriever",
-    "bloodhound",
-    "australian shephard"
-  ];
-
-  // breedsList = Object.keys(this.dogBreeds).map(key => ({name: key}));
   dogData = new Map();
   dogList = [];
   numBreeds: number;
@@ -43,7 +32,6 @@ export class AppSelectMenu {
           }
         }
         console.log(this.dogData);
-        // this.dogList = [...this.dogData.keys()];
         
         this.dogList = Object.keys(response.data.message);
         console.log(this.dogList);

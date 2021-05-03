@@ -1,0 +1,32 @@
+.app-share-social{
+  margin: 1rem 2rem 0 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background: rgba(252,243,237,0.5);
+  border-radius: 1rem;
+}
+
+.buttons{
+  display: flex;
+  margin: 0.5rem 0;
+}
+
+button, img{
+  width: 2rem;
+  height: 2rem;
+}
+
+button{
+  padding: 0;
+  border: 0;
+  background: none;
+  margin: 0 2rem;
+}
+
+.share-suggestion{
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  display: inline-block;
+  margin: 0.3rem;
+}

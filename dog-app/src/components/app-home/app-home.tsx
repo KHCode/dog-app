@@ -27,6 +27,7 @@ export class AppHome {
         {this.imgUrl ? <app-image dogImage={this.imgUrl} altText={this.dogSelected}></app-image> : <app-on-load></app-on-load>}
         <app-select-menu handleChange={this.getPicture}></app-select-menu>
         <app-again-button dogSelected={this.dogSelected} handleClick={this.getPicture}></app-again-button>
+        <app-share-social imageUrl={this.imgUrl} dogName={this.dogSelected}></app-share-social>
       </div>
     );
   }

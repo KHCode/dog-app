@@ -27,6 +27,10 @@ export namespace Components {
     interface AppSelectMenu {
         "handleChange": (e: Event) => void;
     }
+    interface AppShareSocial {
+        "dogName": string;
+        "imageUrl": string;
+    }
 }
 declare global {
     interface HTMLAppAgainButtonElement extends Components.AppAgainButton, HTMLStencilElement {
@@ -71,6 +75,12 @@ declare global {
         prototype: HTMLAppSelectMenuElement;
         new (): HTMLAppSelectMenuElement;
     };
+    interface HTMLAppShareSocialElement extends Components.AppShareSocial, HTMLStencilElement {
+    }
+    var HTMLAppShareSocialElement: {
+        prototype: HTMLAppShareSocialElement;
+        new (): HTMLAppShareSocialElement;
+    };
     interface HTMLElementTagNameMap {
         "app-again-button": HTMLAppAgainButtonElement;
         "app-home": HTMLAppHomeElement;
@@ -79,6 +89,7 @@ declare global {
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
         "app-select-menu": HTMLAppSelectMenuElement;
+        "app-share-social": HTMLAppShareSocialElement;
     }
 }
 declare namespace LocalJSX {
@@ -102,6 +113,10 @@ declare namespace LocalJSX {
     interface AppSelectMenu {
         "handleChange"?: (e: Event) => void;
     }
+    interface AppShareSocial {
+        "dogName"?: string;
+        "imageUrl"?: string;
+    }
     interface IntrinsicElements {
         "app-again-button": AppAgainButton;
         "app-home": AppHome;
@@ -110,6 +125,7 @@ declare namespace LocalJSX {
         "app-profile": AppProfile;
         "app-root": AppRoot;
         "app-select-menu": AppSelectMenu;
+        "app-share-social": AppShareSocial;
     }
 }
 export { LocalJSX as JSX };
@@ -123,6 +139,7 @@ declare module "@stencil/core" {
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "app-select-menu": LocalJSX.AppSelectMenu & JSXBase.HTMLAttributes<HTMLAppSelectMenuElement>;
+            "app-share-social": LocalJSX.AppShareSocial & JSXBase.HTMLAttributes<HTMLAppShareSocialElement>;
         }
     }
 }
