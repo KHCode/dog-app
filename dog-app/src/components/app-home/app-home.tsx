@@ -9,17 +9,28 @@ import axios from 'axios';
 export class AppHome {
   @State() imgUrl: string;
   @State() dogSelected: string;
-
+  dogName: string;
+  capitalName: string;
   getPicture = (event) => {
-    console.log(event.target.value);
     this.dogSelected = event.target.value;
     axios.get(`https://dog.ceo/api/breed/${event.target.value}/images/random`)
       .then(response => {
-        console.log(response.data.message);
         this.imgUrl = response.data.message;
-        console.log(this.imgUrl);
       });
   }
+
+  facebookShare(event){
+    this.dogName = event.currentTarget.dataset.name
+    this.capitalName = this.dogName.charAt(0).toUpperCase() + this.dogName.slice(1)
+    window.open(`https://facebook.com/sharer.php?u=${event.currentTarget.dataset.url}`)
+  }
+
+  twitterShare(event){
+    this.dogName = event.currentTarget.dataset.name
+    this.capitalName = this.dogName.charAt(0).toUpperCase() + this.dogName.slice(1)
+    window.open(`https://twitter.com/intent/tweet?url=${event.currentTarget.dataset.url}&text=${encodeURIComponent(`Check out this ${this.capitalName}`)}`)
+  }
+
 
   render() {
     return (
@@ -27,7 +38,7 @@ export class AppHome {
         {this.imgUrl ? <app-image dogImage={this.imgUrl} altText={this.dogSelected}></app-image> : <app-on-load></app-on-load>}
         <app-select-menu handleChange={this.getPicture}></app-select-menu>
         <app-again-button dogSelected={this.dogSelected} handleClick={this.getPicture}></app-again-button>
-        <app-share-social imageUrl={this.imgUrl} dogName={this.dogSelected}></app-share-social>
+        <app-share-social handleFbClick={this.facebookShare} handleTwClick={this.twitterShare} dogName={this.dogSelected} imageUrl={this.imgUrl}></app-share-social>
       </div>
     );
   }

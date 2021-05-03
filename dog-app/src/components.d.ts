@@ -29,6 +29,8 @@ export namespace Components {
     }
     interface AppShareSocial {
         "dogName": string;
+        "handleFbClick": (e: Event) => void;
+        "handleTwClick": (e: Event) => void;
         "imageUrl": string;
     }
 }
@@ -115,6 +117,8 @@ declare namespace LocalJSX {
     }
     interface AppShareSocial {
         "dogName"?: string;
+        "handleFbClick"?: (e: Event) => void;
+        "handleTwClick"?: (e: Event) => void;
         "imageUrl"?: string;
     }
     interface IntrinsicElements {
