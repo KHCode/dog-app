@@ -1,5 +1,5 @@
 ﻿# DogPix
-This is a simple I built with StencilJS and the Dog CEO API. It's mostly written in Typescript, which I had never written in before, so that was a lot of fun to use.
+This is a small, dynamic app I built with StencilJS and the Dog CEO API. It's mostly written in Typescript, which I had never written in before, so that was a lot of fun to use.
 
 ## How I Built This App
 The following is a simplified description of the process I went through in creating this app. 
